@@ -1,0 +1,16 @@
+version: '3.0'
+
+services:
+  web:
+    buid: .
+    ports:
+      - "8080:80"
+
+  cacheservice:
+    image: redis
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: Password@123
+
