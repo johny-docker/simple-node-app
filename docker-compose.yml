@@ -5,11 +5,3 @@ services:
     build: .
     ports:
       - "8080:80"
-
-  redis:
-    image: redis
-
-  database:
-    image: postgres
-    environment:
-      POSTGRES_PASSWORD: Password@123
