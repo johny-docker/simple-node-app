@@ -1,14 +1,16 @@
-FROM node:21-alpine3.17
+FROM node:latest
+
+RUN apt install curl -y
 
 MAINTAINER John S <john@xyz.com>
 
-WORKDIR /usr/src/simplenodeapp
+WORKDIR /app/simplenodeapp
 
-COPY package.json /usr/src/simplenodeapp
+COPY package.json .
 
 RUN npm install --production
 
-COPY ./src  /usr/src/simplenodeapp
+COPY ./src  .
 
 CMD [ "node", "server.js" ]
 
