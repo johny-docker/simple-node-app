@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleui-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      appname: simpleui
+  template:
+    metadata:
+      labels:
+        appname: simpleui
+    spec:
+      containers:
+      - name: simpleui
+        image: johnydocker2/simpleui:1.0
+        ports:
+        - containerPort: 80
+...
